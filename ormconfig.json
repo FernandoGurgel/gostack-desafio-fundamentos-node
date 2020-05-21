@@ -1,0 +1,15 @@
+{
+  "type":"postgres",
+  "host":"localhost",
+  "port":"5432",
+  "username":"postgres",
+  "password":"fg2020",
+  "database":"gostack_",
+  "schema":"transaction",
+  "migrations":[
+    "./src/database/migrations/*.ts"
+  ],
+  "cli":{
+    "migrationsDir":"./src/database/migrations"
+  }
+}
