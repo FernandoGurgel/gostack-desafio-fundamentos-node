@@ -19,12 +19,18 @@ jobs:
         node-version: [12.16.3]
 
     steps:
-    - uses: Enable postgres for unit test
-    - run: docker-compose up -d
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run typeorm migration:run
-    - run: npm test
+      - uses: actions/checkout@v2
+      - name: Enable postgres for unit test
+        run: docker-compose up -d
+
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        run: npm install
+      - name: Run migration
+        run: npm run typeorm migration:run
+      - name: Run test
+        run: npm test
