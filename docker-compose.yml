@@ -7,6 +7,7 @@ services:
     container_name: gostack-postgres
     environment:
      - "POSTGRES_PASSWORD=fg2020"
+     - "POSTGRES_DB=gostack_"
     ports:
       - 5432:5432
 

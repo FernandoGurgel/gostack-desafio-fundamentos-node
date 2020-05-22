@@ -5,7 +5,6 @@
   "username":"postgres",
   "password":"fg2020",
   "database":"gostack_",
-  "schema":"transaction",
   "entities": [
     "./src/models/*.ts"
   ],
